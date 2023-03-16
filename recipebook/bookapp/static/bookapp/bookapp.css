@@ -1,8 +1,32 @@
+* {margin:0; padding: 0;
+box-sizing: border-box;}
+body {
+    background-image: url(../images/background_image\ \(1\).webp);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    
+}
 h1 {
-    color: red;
-    text-align: center;
+ text-align: right;
+ margin-right: 160px;
+}
+h2 {
+    margin-left: 960px;
 }
 .logo {
     height: 80px;
     width: 80px;
+    mix-blend-mode: multiply;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #f1c367, #f4d88cd6);
+}
+footer {
+    
+   position: relative;
+   margin-top: 210px;
+   height: auto;
+    
 }
