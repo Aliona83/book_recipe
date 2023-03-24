@@ -1,16 +1,10 @@
 * {margin:0; padding: 0;
 box-sizing: border-box;}
-body {
-    background-image: url(../images/background_image\ \(1\).webp);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    
-    
-}
 
-h2 {
-    margin-left: 960px;
-}
+    
+
+
+
 .logo {
     height: 80px;
     width: 80px;
