@@ -1,6 +1,5 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,11 +16,15 @@
 
 {% endblock %}
 <body>
-    <footer class="text-center "style="background-color:#f4d88cd6" >
+    <nav class="navbar navbar-expand-lg navbar-light ">
+       
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'bookapp:index' %}"></a>
+          <img src="{% static 'images/logoo.png' %}" class="logo">
 
-        <!-- Grid container -->
+ <!-- Footer -->
+    <footer class="text-center "style="background-color:#f4d88cd6" >
         <div class="container p-4" >
-      
           <!-- Section: Social media -->
           <section class="mb-4">
             <!-- Facebook -->
