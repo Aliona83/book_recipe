@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from .views import home
+from bookapp import views
+
+app_name="bookapp"
 
 urlpatterns = [
-    path('', home, name="home")
+    path('', views.index, name="index"),
+    path('home', views.home, name="home"),
 ]

@@ -7,10 +7,7 @@ body {
     
     
 }
-h1 {
- text-align: right;
- margin-right: 160px;
-}
+
 h2 {
     margin-left: 960px;
 }
@@ -19,6 +16,7 @@ h2 {
     width: 80px;
     mix-blend-mode: multiply;
 }
+
 
 .navbar {
     background-image: linear-gradient(to right, #f1c367, #f4d88cd6);
