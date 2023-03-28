@@ -1,4 +1,3 @@
-{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,56 +10,36 @@
     <!--FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href='/static/bookapp/bookapp.css'>
-    <title>Document</title>
+    <title>{% block title %}{% endblock %}Welcome to Recipe Book</title>
 </head>
 {% block head %}
 
 {% endblock %}
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light ">
-       
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'bookapp:index' %}"></a>
-        
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'bookapp:home'%}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Recipe</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sign In </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sign Up </a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-      
-    <main class="container-fluid">
-    <h1 class="text-center">Welcome to Recipe Book</h1>
+  {% block main-content %}{% endblock main-content %}
+  
+    <main class="container-fluid mt-15">
+    <h1 class="text-center" >Welcome to Recipe Book</h1>
     <h2 class="text-center">About us</h2>
  <p style="display: block;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique odio eos porro, provident magnam pariatur exercitationem voluptatibus ratione accusamus optio perferendis impedit inventore minima quidem tenetur tempora ad mollitia in.
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique odio eos porro, provident magnam pariatur exercitationem voluptatibus ratione accusamus optio perferendis impedit inventore minima quidem tenetur tempora ad mollitia in.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique odio eos porro, provident magnam pariatur exercitationem voluptatibus ratione accusamus optio perferendis impedit inventore minima quidem tenetur tempora ad mollitia in.
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique odio eos porro, provident magnam pariatur exercitationem voluptatibus ratione accusamus optio perferendis impedit inventore minima quidem tenetur tempora ad mollitia in.
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique odio eos porro, provident magnam pariatur exercitationem voluptatibus ratione accusamus optio perferendis impedit inventore minima quidem tenetur tempora ad mollitia in.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique odio eos porro, provident magnam pariatur exercitationem voluptatibus ratione accusamus optio perferendis impedit inventore minima quidem tenetur tempora ad mollitia in.
-
  </p>
+ <div class="row">
+  <div class="row-body text-center">
+     <a class="btn btn-secondary" href="{% url 'signup' %}">Sign Up</a>
+     <a class="btn btn-primary" href="#">Sign In</a>
+
+  </div>
+
+</div>
 </main>
+  
+      
 
  <!-- Footer -->
+ {% block footer%}{% endblock footer %}
 <footer class="text-center "style="background-color:#f4d88cd6" >
 
   <!-- Grid container -->
