@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from bookapp import views
 
-
+                                                                                                                                                             
 
 urlpatterns = [
      path('', include('bookapp.urls')),
      path('home', views.home, name="home"),
-     path('signup', views.signup, name="signup"),
+     path('signup/', views.signup, name="signup"),
+     
    
 ]

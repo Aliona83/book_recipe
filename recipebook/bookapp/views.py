@@ -11,5 +11,6 @@ def home(request):
 
 def signup(request):
     form = UserCreationForm()
-    return render(request, "registration/signup.html")
+    return render(request, "registration/signup.html",{'form':form})
+    
 
