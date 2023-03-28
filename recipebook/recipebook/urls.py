@@ -20,7 +20,8 @@ from bookapp import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('signup', views.signup, name="signup"),
-    path('', include('bookapp.urls')),
+     path('', include('bookapp.urls')),
+     path('home', views.home, name="home"),
+     path('signup', views.signup, name="signup"),
+   
 ]
