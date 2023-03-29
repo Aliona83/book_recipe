@@ -1,16 +1,16 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
-
-
-# Create your views here.
-
+from datetime import datetime
 
 def home(request):
-    return render(request, "bookapp/base.html")
+    name = "Aliona"
+    # get current time
+    now = datetime.now()
+    current_year = now.year
 
+    # get current time
+    time = now.striftime('%H:%M:%S %p')
 
-def signup(request):
-    form = UserCreationForm()
-    return render(request, "registration/signup.html",{'form':form})
-    
+    return render(request, 'home.html', {"name": name,
+    "current_year": current_year,"time": time,
 
+    })
