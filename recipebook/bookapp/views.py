@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from datetime import datetime
 
+
 def home(request):
     name = "Aliona"
     # get current time
@@ -8,9 +9,8 @@ def home(request):
     current_year = now.year
 
     # get current time
-    time = now.striftime('%H:%M:%S %p')
+    time = now.strftime('%H:%M %p')
 
-    return render(request, 'home.html', {"name": name,
-    "current_year": current_year,"time": time,
-
+    return render(request, 'bookapp/home.html', {"name": name,
+     "current_year": current_year, "time": time,
     })
