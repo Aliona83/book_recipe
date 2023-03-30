@@ -18,4 +18,4 @@ def home(request):
 
 def all_recipes(request):
 
-  return render(request, 'bookapp/recipe_list.html', {})
+    return render(request, 'bookapp/recipe_list.html', {})

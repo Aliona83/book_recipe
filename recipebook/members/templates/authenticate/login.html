@@ -1,0 +1,15 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+
+<h1>Welcome to Recipe Book</h1>
+<h3>Hello {{ name }}</h3>
+<h3>Login form</h3>
+
+<form action="" method=POST>
+    {% csrf_token %}
+
+    <input type="submit"
+    value="Submit" class="btn btn-secondary">
+</form>
+{% endblock %}
