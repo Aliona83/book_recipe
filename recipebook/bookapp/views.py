@@ -14,3 +14,8 @@ def home(request):
     return render(request, 'bookapp/home.html', {"name": name,
      "current_year": current_year, "time": time,
     })
+
+
+def all_recipes(request):
+
+  return render(request, 'bookapp/recipe_list.html', {})
