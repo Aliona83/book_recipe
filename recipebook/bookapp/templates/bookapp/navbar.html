@@ -12,12 +12,19 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'bookapp:recipelist' %}">Recipes</a>
           </li>
+          {% if user.is_authenticated %}
+          <p>Welcome to recipe book {{request.user}}</p>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log Out</a>
+          </li>
+          {% else %}
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log In</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'bookapp:recipelist' %}"></a>
           </li>
+          {% endif %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
