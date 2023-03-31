@@ -19,6 +19,7 @@ def login_user(request):
     else: 
         return render(request, 'authenticate/login.html')
 
+
 def logout_user(selfrequest):
     if request.method == "POST":
         auth.logout(request)
@@ -31,10 +32,8 @@ def register_user(request):
         return HttpResponse(f"You are already authenticated as {request.user}.")
         context = {'form':form}
 
-    
         form = UserCreationForm(request.POST)
         
-
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
