@@ -1,23 +1,16 @@
 {% extends 'bookapp/base.html' %}
 
 {% block content %}
+{% if form.errors %}
 
+<p>There was an error with your form</p>
 <h1>Welcome to Recipe Book</h1>
-<h3>Hello {{ name }}</h3>
-<h3>Login form</h3>
 
-<form action="" method=POST>
+<h3>Register</h3>
+
+<form action="{% url 'register_user' %}" method=POST>
     {% csrf_token %}
-    <div class="container-fluid">
-    <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Username</label>
-          <input type="text" class="form-control" class="username" aria-describedby="emailHelp">
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" class="password">
-        </div>
-      </form>
+    {{ form }}
     <input type="submit"
     value="Submit" class="btn btn-secondary">
 </form>

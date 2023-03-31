@@ -12,7 +12,7 @@ def home(request):
     time = now.strftime('%H:%M %p')
 
     return render(request, 'bookapp/home.html', {"name": name,
-     "current_year": current_year, "time": time,
+ "current_year": current_year, "time": time,
     })
 
 
