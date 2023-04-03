@@ -13,7 +13,6 @@
             <a class="nav-link" href="{% url 'bookapp:recipelist' %}">Recipes</a>
           </li>
           {% if user.is_authenticated %}
-          <p>Welcome to recipe book {{request.user}}</p>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log Out</a>
           </li>
