@@ -1,15 +1,90 @@
 {% extends 'bookapp/base.html' %}
+{% load static %}
 
+{% block content %}
 
-<p>There was an error with your form</p>
 <h1>Welcome to Recipe Book</h1>
 
 <h3>Register</h3>
+<title>Signup</title>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            class="img-thumbnail"
+            src="{% static 'images/ark.png' %}"
+            alt=""
+          />
+        </div>
 
-<form action="{% url 'register_user' %}" method=POST>
-    {% csrf_token %}
-    {{ form.as_p }}
+        <div class="col-md-4 mt-3">
+          <h3 class="text-white text-center">SignUp Here</h3>
+          {% for message in messages %}
+          <div
+            class="alert alert-{{message.tags}} alert-dismissible fade show"
+            role="alert"
+          >
+            <strong></strong> {{message}}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          {% endfor %}
+
+ <a  class="btn btn-sm btn-block btn-light mt-2" id="gp" href="{% provider_login_url 'google' %}">Login With <img src="https://img.icons8.com/color/30/000000/google-logo.png"/></a>
+
+                          <p class="text-center mb-0">OR</p>
+<form action="{% url 'register_user' %}" method="POST">
+        {% csrf_token %}
+
+        <label class="text-black">UserName</label>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            required
+          />
+        </div>
+        <label class="text-black mt-2">Email</label>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" required />
+        </div>
+
+        <label class="text-black mt-2">Password</label>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            name="pass1"
+            required
+          />
+        </div>
+        <label class="text-black mt-2">Confirm Password</label>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            name="pass2"
+            required
+          />
+        </div>
+        <div class="d-grid gap-2 mt-4">
+          <button class="btn btn-light" type="submit">SignIn</button>
+        </div>
+      </form>
+      <br /><br />
+      <p>Already User? <a href="/login">Login</a></p>
+    </div>
+  </div>
+</div>
     <input type="submit"
     value="Submit" class="btn btn-secondary">
 </form>
 </div>
+{% endblock %}
