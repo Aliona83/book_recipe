@@ -16,7 +16,7 @@ def login_user(request):
     if myuser is not None:
         login(request, myuser)
         message.success(request, "Login success")
-        return redirect('/')
+        return redirect('bookapp/recipe_list.html')
     else: 
         message.error(request, "Invalid Credentails")
         return render(request, 'authenticate/login.html')
@@ -52,12 +52,12 @@ def register_user(request):
         except:
             pass
     
-        myuser=User.objects.create_user(username, email, password)
+        myuser = User.objects.create_user(username, email, password)
         myuser.save()
         messages.success(request, "Signup Success Please login!")
-        return redirect('/login')
+        return redirect('/login.html')
               
-    return render(request, 'register_user.html')
+    return render(request, 'authenticate/register_user.html')
         
 
     
