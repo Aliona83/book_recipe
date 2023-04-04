@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from members import views as user_views
+
 
                                                                                                                                          
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bookapp.urls')),
+    path('register_user/', user_views.register_user, name='register'),
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls')),
+   
    
 
 ]

@@ -2,89 +2,21 @@
 {% load static %}
 
 {% block content %}
+{% endblock  %}
 
 <h1>Welcome to Recipe Book</h1>
 
-<h3>Register</h3>
-<title>Signup</title>
-  </head>
-  <body>
-    <div class="container mt-3">
-      <div class="row">
-        <div class="col-md-6">
-          <img
-            class="img-thumbnail"
-            src="{% static 'images/ark.png' %}"
-            alt=""
-          />
-        </div>
+<h3>Register here</h3>
 
-        <div class="col-md-4 mt-3">
-          <h3 class="text-white text-center">SignUp Here</h3>
-          {% for message in messages %}
-          <div
-            class="alert alert-{{message.tags}} alert-dismissible fade show"
-            role="alert"
-          >
-            <strong></strong> {{message}}
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
-          </div>
-          {% endfor %}
-
- 
-
-                          <p class="text-center mb-0">OR</p>
-<form action="{% url 'register_user' %}" method="POST">
-        {% csrf_token %}
-
-        <label class="text-black">UserName</label>
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            required
-          />
-        </div>
-        <label class="text-black mt-2">Email</label>
-        <div class="form-group">
-          <input type="email" class="form-control" name="email" required />
-        </div>
-
-        <label class="text-black mt-2">Password</label>
-        <div class="form-group">
-          <input
-            type="password"
-            class="form-control"
-            name="pass1"
-            required
-          />
-        </div>
-        <label class="text-black mt-2">Confirm Password</label>
-        <div class="form-group">
-          <input
-            type="password"
-            class="form-control"
-            name="pass2"
-            required
-          />
-        </div>
-        <div class="d-grid gap-2 mt-4">
-          <button class="btn btn-light" type="submit">SignIn</button>
-        </div>
-      </form>
-      <br /><br />
-      <p>Already User? <a href="/login">Login</a></p>
-    </div>
+<form action="" method="'POST">
+  {% csrf_token %}
+  {% for field in form %}
+  <div>
+    <p>{{ field.label }}: <br> {{ field }}</p>
+    {% for error in field.errors %}
+    <small style ="color: red">{{ error }}</small>
+    {% endfor %}
   </div>
-</div>
-    <input type="submit"
-    value="Submit" class="btn btn-secondary">
-</form>
-</div>
-{% endblock %}
+{% endfor %}
+  <button type="submit">Register</button>
+</form
